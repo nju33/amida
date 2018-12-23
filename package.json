@@ -1,0 +1,48 @@
+{
+  "name": "amida",
+  "description": "",
+  "version": "0.0.0",
+  "main": "dist/main/index.js",
+  "types": "dist/types/index.d.ts",
+  "module": "dist/module/index.js",
+  "umd:main": "amida.js",
+  "source": "src/index.ts",
+  "files": [
+    "dist",
+    "amida.js"
+  ],
+  "repository": "git@github.com:nju33/amida.git",
+  "homepage": "https://github.com/nju33/amida",
+  "bugs": "https://github.com/nju33/nju33/amida/issues",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "yarn build",
+    "test": "jest",
+    "typedoc": "typedoc --theme minimal --out docs src/index.ts --ignoreCompilerErrors",
+    "docz.dev": "docz dev --port 6069",
+    "docz.build": "docz build",
+    "build.main": "tsc -P tsconfig.main.json",
+    "build.module": "tsc -P tsconfig.module.json",
+    "build.umd": "rollup dist/module/index.js --format iife --name Amida --file amida.js",
+    "postbuild.umd": "uglifyjs --compress --mangle --output amida.js -- amida.js",
+    "build.types": "tsc -P tsconfig.types.json --emitDeclarationOnly",
+    "build": "yarn build.main; yarn build.module; yarn build.umd; yarn build.types"
+  },
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "@nju33/tsconfig-main": "0.0.3",
+    "@nju33/tsconfig-module": "0.0.3",
+    "@nju33/tsconfig-types": "0.0.3",
+    "@types/jest": "23.3.10",
+    "jest": "23.6.0",
+    "prettier": "1.15.3",
+    "renovate-config-nju33": "0.0.1",
+    "rollup": "^0.68.1",
+    "ts-jest": "23.10.5",
+    "tslint": "5.12.0",
+    "typedoc": "^0.13.0",
+    "typescript": "3.2.2",
+    "uglify-js": "^3.4.9"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "extends": "@nju33/tsconfig-main",
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/*.test.ts"
+  ],
+  "compilerOptions": {
+    "outDir": "dist/main"
+  }
+}
