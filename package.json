@@ -31,7 +31,7 @@
   "peerDependencies": {},
   "dependencies": {},
   "devDependencies": {
-    "@nju33/tsconfig-main": "0.0.3",
+    "@nju33/tsconfig-main": "0.0.5",
     "@nju33/tsconfig-module": "0.0.3",
     "@nju33/tsconfig-types": "0.0.3",
     "@types/jest": "23.3.11",
